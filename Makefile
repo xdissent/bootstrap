@@ -9,8 +9,8 @@ WATCHR ?= `which watchr`
 build:
 	@@if test ! -z ${LESS_COMPESSOR}; then \
 		sed -e 's/@VERSION/'"v${VERSION}"'/' -e 's/@DATE/'"`date`"'/' <${BOOTSTRAP_LESS} >${BOOTSTRAP_LESS}.tmp; \
-		lessc ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP}; \
-		lessc ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP_MIN} --compress; \
+		${LESS_COMPESSOR} ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP}; \
+		${LESS_COMPESSOR} ${BOOTSTRAP_LESS}.tmp > ${BOOTSTRAP_MIN} --compress; \
 		rm -f ${BOOTSTRAP_LESS}.tmp; \
 		echo "Bootstrap successfully built! - `date`"; \
 	else \
