@@ -215,7 +215,7 @@
   , blur: function (e) {
       var that = this
       e.stopPropagation()
-      e.preventDefault()
+      // e.preventDefault()
       setTimeout(function () { that.hide() }, 150)
     }
 
